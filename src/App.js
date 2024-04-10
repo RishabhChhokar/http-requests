@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import MoviesList from "./components/MoviesList";
+import AddMovie from "./components/AddMovie";
 import "./App.css";
 
 function App() {
@@ -62,6 +63,10 @@ function App() {
     };
   }, [retryCount, fetchMoviesHandler, retryIntervalId]);
 
+  const addMovieHandler = (movie) => {
+    setMovies((prevMovies) => [...prevMovies, movie]);
+  };
+
   const content = useMemo(() => {
     if (movies.length > 0) {
       return <MoviesList movies={movies} />;
@@ -82,6 +87,9 @@ function App() {
 
   return (
     <React.Fragment>
+      <section>
+        <AddMovie onAddMovie={addMovieHandler} />
+      </section>
       <section>{content}</section>
     </React.Fragment>
   );
