@@ -5,7 +5,7 @@ import classes from "./Movie.module.css";
 const Movie = (props) => {
   async function deleteHandler(id) {
     const response = await fetch(
-      `https://react-http-ef694-default-rtdb.firebaseio.com/movies/${id}.json`,
+      `https://react-authentication--app-default-rtdb.firebaseio.com/movies/${id}.json`,
       {
         method: "DELETE",
       }
