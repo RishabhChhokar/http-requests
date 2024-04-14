@@ -10,7 +10,6 @@ const Movie = (props) => {
         method: "DELETE",
       }
     );
-
     alert(`Movie "${props.title}" has been successfully deleted.`);
     window.location.reload();
   }
