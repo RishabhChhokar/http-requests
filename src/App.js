@@ -19,7 +19,7 @@ function App() {
       if (!response.ok) {
         throw new Error("Something went wrong!");
       }
-
+      
       const data = await response.json();
       const loadedMovies = [];
 
@@ -42,7 +42,7 @@ function App() {
     fetchMoviesHandler();
   }, [fetchMoviesHandler]);
 
-  async function addMovieHandler(movie) {
+  const addMovieHandler = async (movie) => {
     const response = await fetch(
       "https://react-authentication--app-default-rtdb.firebaseio.com/movies.json",
       {
